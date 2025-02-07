@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+/* General Styles */
+* {
+    background-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Navbar Styling */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 10px 0;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #BB86FC;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#navbar ul li a:hover {
+    background: #BB86FC;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Styling */
+#about, #ac, #adi, #work, #rightpanel, #leftpanel, #middle {
+    width: 90%;
+    max-width: 800px;
+    background-color: #F5F5F5;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#about:hover, #ac:hover, #adi:hover, #work:hover, #rightpanel:hover, #leftpanel:hover, #middle:hover {
+    box-shadow: 10px 10px 20px #BB86FC;
+    transform: translate(2px, 2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #navbar {
+        width: 95%;
+    }
+    #navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #navbar ul li a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    #about, #ac, #adi, #work, #rightpanel, #leftpanel, #middle {
+        width: 95%;
+    }
+    
+    .image-container {
+        max-width: 250px;
+    }
+    
+    #insta, #git, #x {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar {
+        width: 100%;
+        border-radius: 0;
+    }
+    #navbar ul {
+        gap: 5px;
+    }
+    #navbar ul li a {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    #about, #ac, #adi, #work, #rightpanel, #leftpanel, #middle {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .image-container {
+        max-width: 200px;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+/* Navbar Styling */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    background-color: rgba(30, 30, 30, 0.9);
+    padding: 15px 0;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar ul li {
+    display: inline;
+}
+
+#navbar ul li a {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #BB86FC;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#navbar ul li a:hover {
+    background: #BB86FC;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#about {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+    border: 2px solid #2E2E2E;
+    background-color: #F5F5F5 !important;
+    height: 500px;
+    width: 900px;
+    position: absolute;
+    top: 180px;
+    left: 100px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 10;
+}
+
+#about:hover {
+    opacity: 1; 
+    box-shadow: 10px 10px 20px #BB86FC; 
+    transform: translate(2px, 2px);
+}
+
+#about .content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    font-size: 16px;
+    color: white; 
+    background-color: #F5F5F5; 
+    border-radius: 10px; 
+}
+
+#about-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1; 
+}
+
+#about:hover #about-video {
+    opacity: 1; 
+}
+
+/* IMAGE SECTION */
+.image-container {
+    position: absolute;
+    top: 180px;
+    left: 1100px;
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Style for the image */
+#img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    z-index: 5;
+}
+
+/* Style for the video (hidden by default) */
+#img-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10;
+}
+
+/* Hover effect */
+.image-container:hover #img {
+    box-shadow: 10px 10px 20px #BB86FC;
+    transform: translate(2px, 2px);
+}
+
+.image-container:hover #img-video {
+    opacity: 1; /
+}
+
+/* SOCIAL ICONS */
+#insta, #git, #x {
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    position: absolute;
+    top: 580px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 15;
+}
+
+#insta { left: 1170px; }
+#git { left: 1225px; }
+#x { left: 1270px; }
+
+#insta:hover, #git:hover, #x:hover {
+    box-shadow: 10px 10px 20px #BB86FC; 
+    transform: translate(2px, 2px);
+}
+
+/* PAGE ANIMATION */
+body {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 2s forwards;
+}
+
+@keyframes fadeInFromBottom {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ACHIEVEMENT SECTION */
+#ac {
+    width: 800px;
+    height: 400px;
+    background-color: #F5F5F5; 
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 30px;
+    border: 15px solid #2E2E2E; 
+    position: absolute;
+    top: 750px;
+    left: 700px;
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: opacity 1s ease-out, transform 1s ease-out, box-shadow 0.3s ease-in-out;
+    z-index: 10;
+    visibility: visible; 
+}
+
+#ac.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Hover effect */
+#ac:hover {
+    box-shadow: 20px 0px 20px 20px #BB86FC; 
+    transform: translate(2px, 2px); 
+}
+
+/* Content inside the achievement section */
+#ac .content {
+    position: relative;
+    z-index: 2; /* Ensures text stays above the video */
+    padding: 20px;
+    font-size: 16px;
+    color: black; /* Text color */
+    background-color: #F5F5F5; /* Minimalist and clean background */
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+#ac .content:hover {
+    background-color: rgba(245, 245, 245, 0.9); /* Slightly darker on hover */
+}
+
+/* Background video for #ac */
+#ac-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1; /* Video stays behind the text */
+}
+
+#ac:hover #ac-video {
+    opacity: 1; /* Video becomes visible on hover */
+}
+
+/* ADI SECTION */
+#adi {
+    font-size: 7vw;
+    position: relative;
+    top: 750px;
+    left: 100px;
+    height: 400px;
+    width: 450px;
+    border-radius: 15px;
+    background-color: #F5F5F5; /* Minimalist and clean background */
+    color: white; /* Ensure text is visible */
+    opacity: 0;
+    transform: translateY(50px); /* Initial translateY for the fade-in */
+    transition: opacity 1s ease-out, transform 1.5s ease-out;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+#adi.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Style for the video */
+#adi-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire div */
+    z-index: -1; /* Keeps the video behind the text */
+}
+
+/* Hover effect for the content */
+#adi:hover {
+    box-shadow: 20px 0px 20px 20px #BB86FC; /* Purple glow effect */
+    transform: translate(2px, 2px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/* General Styles */
+* {
+    background-color: transparent;
+}
+
+body {
+    background-color: #121212;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Work Button */
+#work {
+    position: absolute;
+    top: 1400px;
+    left: 41.5%;
+    height: 200px;
+    width: 300px;
+    border-radius: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 20px solid #2E2E2E;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#work:hover {
+    box-shadow: 10px 10px 20px #BB86FC;
+    transform: translate(2px, 2px);
+}
+
+/* Panels */
+#rightpanel, #leftpanel, #middle {
+    position: absolute;
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+    border-radius: 20px;
+    border: 15px solid #2E2E2E;
+    padding: 20px;
+    transition: opacity 0.5s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#rightpanel {
+    top: 1175px;
+    left: 25px;
+    height: 350px;
+    width: 550px;
+    background-image: url('right\ geek.jpg'); /* Add your image */
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+    color: white;
+}
+
+#leftpanel {
+    top: 1450px;
+    left: 67%;
+    width: 400px;
+    height: 280px;
+    background-image: url('editor.jpg'); /* Add your image */
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+    color: white;
+}
+
+#middle {
+    top: 1215px;
+    left: 655px;
+    background-image: url('gssoc.jpg'); /* Add your image */
+    background-size: cover;
+    background-position: center;
+    z-index: 10;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#rightpanel.visible {
+    animation: fadeInRight 1s forwards;
+}
+
+#leftpanel.visible {
+    animation: fadeInLeft 1s forwards;
+}
+
+#middle.visible, #tubtub.visible, #this.visible {
+    animation: fadeIn 1s forwards;
+}
+
+/* Hover Effects */
+#rightpanel:hover, #leftpanel:hover, #middle:hover {
+    box-shadow: 10px 10px 20px #BB86FC;
+    transform: translate(2px, 2px);
+}
+
+/* Other Elements */
+#niks {
+    position: absolute;
+    top: 1550px;
+    left: 26%;
+    width: 200px;
+    height: 225px;
+}
+
+#this {
+    position: absolute;
+    top: 1600px;
+    left: 34%;
+    height: 80px;
+    width: 220px;
+    background-color: white;
+    border: 5px solid #2E2E2E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+/* General Doodle Styling */
+.doodle {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    opacity: 0.8;
+}
+
+/* Left Corner Doodle */
+.doodle-left {
+    top: 15px;
+    left: 15px;
+    background: radial-gradient(circle, #BB86FC 20%, transparent 50%),
+                linear-gradient(45deg, #BB86FC, #8A2BE2);
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px rgba(187, 134, 252, 0.5);
+}
+
+/* Right Corner Doodle */
+.doodle-right {
+    top: 15px;
+    right: 15px;
+    background: conic-gradient(from 0deg, #BB86FC, #8A2BE2, #FF69B4);
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.5);
+}
+
+/* Animations for a Dynamic Look */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.doodle-left, .doodle-right {
+    animation: pulse 3s infinite alternate ease-in-out;
+}
